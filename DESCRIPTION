@@ -1,0 +1,21 @@
+Package: factorAnalysis
+Type: Package
+Title: Principal Components and Factor Analysis
+Version: 0.1.0
+Authors@R: person("Rob", "Kabacoff", role=c("aut", "cre"), email="rkabacoff@wesleyan.edu")
+Description: Perform principal components analysis and iterated principal
+    axis factor analysis with visualizations.
+Encoding: UTF-8
+LazyData: true
+Imports: 
+    ggplot2,
+    psych,
+    scales
+Suggests: 
+    testthat,
+    knitr,
+    rmarkdown
+RoxygenNote: 6.1.1
+VignetteBuilder: knitr
+BugReports: https://github.com/rkabacoff/factorAnalysis/issues
+License: GPL-3
