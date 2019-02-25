@@ -75,6 +75,9 @@ PCA <- function(data, nfactors=NULL, rotate="none", digits=2, ...) {
 
   # eigenvalues table
   ss_table <- result$Vaccounted
+  if(nfactors==1){
+    ss_table <- rbind(ss_table, ss_table[2, ])
+  }
   ss_table <- ss_table[c(1,2,3),]
   ss_table <- round(as.data.frame(ss_table), digits)
   names(ss_table) <- paste0("PC", 1:nfactors)
