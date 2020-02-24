@@ -10,12 +10,13 @@ LazyData: true
 Imports: 
     ggplot2,
     psych,
-    scales
+    scales,
+    factoextra
 Suggests: 
     testthat,
     knitr,
     rmarkdown
-RoxygenNote: 6.1.1
+RoxygenNote: 7.0.2
 VignetteBuilder: knitr
 BugReports: https://github.com/rkabacoff/factorAnalysis/issues
 License: GPL-3

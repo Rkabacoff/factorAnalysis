@@ -4,8 +4,7 @@
 \alias{FA}
 \title{Factor Analysis}
 \usage{
-FA(data, nfactors = NULL, rotate = "none", fm = "pa", digits = 2,
-  ...)
+FA(data, nfactors = NULL, rotate = "none", fm = "pa", digits = 2, ...)
 }
 \arguments{
 \item{data}{a data frame or correlation matrix.}
