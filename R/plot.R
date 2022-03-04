@@ -7,21 +7,24 @@
 #' or \code{\link{FA}} functions.
 #' @param sort logical. If \code{TRUE}, sort the pattern matrix.
 #' @param type generate a table plot (\code{"table"}) or bar plot (\code{"bar"}).
-#'
+#' @param y not used
+#' @param ... not used
 #' @export
 #' @return a ggplot2 graph
 #' @import ggplot2
+#' @importFrom tidyr gather
 #' @importFrom scales muted
 #' @examples
 #' fit.pca <- PCA(Harman74.cor$cov, nfactors=4, rotate="varimax")
 #' plot(fit.pca)
 #' plot(fit.pca, type="bar")
-plot.factorAnalysis <- function(x, sort=TRUE, type=c("table", "bar")) {
+plot.factorAnalysis <- function(x, y, ..., sort=TRUE, type=c("table", "bar")) {
   if (!inherits(x, "factorAnalysis")){
     stop("x must be of class factorAnalysis", call. = FALSE)
   }
 
-  library(ggplot2)
+  value <- key <- NULL # for CRAN
+
   type <- match.arg(type)
   x <- x$loadings
   x <- as.matrix(x)
@@ -40,7 +43,7 @@ plot.factorAnalysis <- function(x, sort=TRUE, type=c("table", "bar")) {
   x$var <- row.names(x)
 
   facorder <- rev(x$var)
-  x <- tidyr::gather(x, key="key", value="value", 1:factors)
+  x <- gather(x, key="key", value="value", 1:factors)
   x$var <- factor(x$var, levels=facorder)
 
   if (type == "bar"){

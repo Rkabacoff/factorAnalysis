@@ -4,7 +4,7 @@ author: "Rob Kabacoff"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Vignette Title}
+  %\VignetteIndexEntry{Using the factorAnalysis package}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -20,8 +20,7 @@ The **factorAnalysis** package provides functions for principal components and c
 
 ## Principal Components Analysis
 
-Let's perform a principal components analysis on some ratings data. First we'll import the data into
-R.
+Let's perform a principal components analysis on some ratings data. First we'll import the data into R.
 
 ```{r}
 # input data
@@ -62,9 +61,10 @@ Finally, we'll add the component scores to the original data.
 mydata <- score(ratings, fit.pca)
 head(mydata)
 ```
+
 ## Factor Analysis
 
-In this section, the ratings data are re-analyzed using a *maximum likelihood* factor analysis. 
+In this section, the ratings data are re-analyzed using a *maximum likelihood* factor analysis.
 
 Again, we'll start with a scree plot. This time we'll run 200 simulations. A random number seed is set to assure reproducability.
 
@@ -83,10 +83,9 @@ The scree plot suggests four factors. In the next step, we'll extract two factor
 fit.fa <- FA(ratings, nfactor=4, rotate="promax", fm="ml")
 ```
 
-The printout includes the factor pattern, the factor structure, and the factor intercorrelations.
-The four factors account for 32% of the variance in the original data. Factors 1 and 3 have the hightest correlation (0.37).
+The printout includes the factor pattern, the factor structure, and the factor intercorrelations. The four factors account for 32% of the variance in the original data. Factors 1 and 3 have the hightest correlation (0.37).
 
-Next, we'll plot the pattern matrix as both a table and a bar chart. 
+Next, we'll plot the pattern matrix as both a table and a bar chart.
 
 ```{r fig.width=6, fig.height=6}
 # plot factor pattern as table
@@ -103,5 +102,3 @@ Finally, we'll add the factor scores to the original data.
 mydata <- score(ratings, fit.fa)
 head(mydata)
 ```
-
-

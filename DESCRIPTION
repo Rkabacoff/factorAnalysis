@@ -9,14 +9,17 @@ Encoding: UTF-8
 LazyData: true
 Imports: 
     ggplot2,
+    tidyr,
     psych,
     scales,
+    dplyr,
+    qacBase,
     factoextra
 Suggests: 
     testthat,
     knitr,
     rmarkdown
-RoxygenNote: 7.0.2
+RoxygenNote: 7.1.2
 VignetteBuilder: knitr
 BugReports: https://github.com/rkabacoff/factorAnalysis/issues
 License: GPL-3

@@ -14,6 +14,7 @@
 #' principal axis ("pa"), and maximum likelihood ("ml") factoring.
 #'
 #' @importFrom psych fa.parallel
+#' @importFrom grDevices dev.off pdf
 #' @import ggplot2
 #'
 #' @export
@@ -23,6 +24,7 @@
 #' screePlot(Harman74.cor$cov, method="pc", n.obs=145)
 screePlot <- function(data, n.iter = 50, method = c("pc", "pa", "ml"), ...) {
 
+  n <- type <- NULL # for CRAN
   # number of variables
   nvar <- ncol(data)
 
@@ -76,7 +78,6 @@ screePlot <- function(data, n.iter = 50, method = c("pc", "pa", "ml"), ...) {
   plotdata <- as.data.frame(rbind(actual, sim))
 
   # plot results
-  require(ggplot2)
   apatheme=theme_bw()+
     theme(panel.grid.major = element_blank(),
           panel.grid.minor = element_blank(),

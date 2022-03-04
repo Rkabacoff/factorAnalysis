@@ -15,6 +15,7 @@
 #'
 #' @export
 #' @importFrom factoextra fviz_pca_biplot
+#' @importFrom stats prcomp var
 #'
 #'
 #' @return a ggplot2 graph

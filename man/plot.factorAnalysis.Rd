@@ -4,11 +4,15 @@
 \alias{plot.factorAnalysis}
 \title{Plot a Factor Solution}
 \usage{
-\method{plot}{factorAnalysis}(x, sort = TRUE, type = c("table", "bar"))
+\method{plot}{factorAnalysis}(x, y, ..., sort = TRUE, type = c("table", "bar"))
 }
 \arguments{
 \item{x}{an object of class \code{factorAnalysis} produced by the \code{\link{PCA}}
 or \code{\link{FA}} functions.}
+
+\item{y}{not used}
+
+\item{...}{not used}
 
 \item{sort}{logical. If \code{TRUE}, sort the pattern matrix.}
 
