@@ -6,7 +6,7 @@
 #' @param x an object of class \code{factorAnalysis} produced by the \code{\link{PCA}}
 #' or \code{\link{FA}} functions.
 #' @param sort logical. If \code{TRUE}, sort the pattern matrix.
-#' @param type generate a table plot (\code{"table"}) or bar plot (\code{"bar"}).
+#' @param type generate a bar plot (\code{"bar"}) or table plot (\code{"table"}).
 #' @param y not used
 #' @param ... not used
 #' @export
@@ -17,8 +17,8 @@
 #' @examples
 #' fit.pca <- PCA(Harman74.cor$cov, nfactors=4, rotate="varimax")
 #' plot(fit.pca)
-#' plot(fit.pca, type="bar")
-plot.factorAnalysis <- function(x, y, ..., sort=TRUE, type=c("table", "bar")) {
+#' plot(fit.pca, type="table")
+plot.factorAnalysis <- function(x, y, ..., sort=TRUE, type=c("bar", "table")) {
   if (!inherits(x, "factorAnalysis")){
     stop("x must be of class factorAnalysis", call. = FALSE)
   }
@@ -54,7 +54,7 @@ plot.factorAnalysis <- function(x, y, ..., sort=TRUE, type=c("table", "bar")) {
       #define the fill color gradient: blue=positive, red=negative
       scale_fill_gradient2(name = "Loading",
                            high = "blue", mid = "white", low = "red",
-                           midpoint=0, guide=F) +
+                           midpoint=0, guide="none") +
       ylab("Loading Strength") + #improve y-axis label
       xlab("Variables")+
       theme_bw(base_size=10) #use a black-and-white theme with set font size
@@ -63,7 +63,7 @@ plot.factorAnalysis <- function(x, y, ..., sort=TRUE, type=c("table", "bar")) {
   if (type == "table"){
     p <- ggplot(x, aes(key, var)) +
       geom_tile(aes(fill = value)) +
-      geom_text(aes(label = round(x$value, 2)), size=3) +
+      geom_text(aes(label = round(value, 2)), size=3) +
       scale_fill_gradientn(colors = c( "red",
                                        "white",
                                        "blue"),

@@ -99,7 +99,7 @@ screePlot <- function(data, n.iter = 50, method = c("pc", "pa", "ml"), ...) {
     geom_line() +
 
     # Add the data points.
-    geom_point(size=4) +
+    geom_point(size=2) +
 
     # Label axes and titles
     labs(y = "Eigenvalue",

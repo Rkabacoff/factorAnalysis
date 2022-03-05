@@ -1,10 +1,10 @@
 ---
-title: "Using the factorAnalysis package"
+title: "Using the PCA and FA"
 author: "Rob Kabacoff"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using the factorAnalysis package}
+  %\VignetteIndexEntry{Using the PCA and FA}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -31,7 +31,7 @@ head(ratings)
 Next, well create a scree plot of the data.
 
 ```{r fig.width=6, fig.height=6}
-library(factorAnalysis)
+library(qacDR)
 
 # scree plot
 screePlot(ratings)
@@ -69,7 +69,7 @@ In this section, the ratings data are re-analyzed using a *maximum likelihood* f
 Again, we'll start with a scree plot. This time we'll run 200 simulations. A random number seed is set to assure reproducability.
 
 ```{r fig.height=6, fig.width=6, message=FALSE, warning=FALSE, message=FALSE}
-library(factorAnalysis)
+library(qacDR)
 
 # scree plot
 set.seed(1234)

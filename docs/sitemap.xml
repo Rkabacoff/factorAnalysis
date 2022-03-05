@@ -16,16 +16,25 @@
     <loc>/index.html</loc>
   </url>
   <url>
-    <loc>/reference/FA.html</loc>
-  </url>
-  <url>
-    <loc>/reference/PCA.html</loc>
+    <loc>/reference/big5.html</loc>
   </url>
   <url>
     <loc>/reference/biPlot.html</loc>
   </url>
   <url>
+    <loc>/reference/FA.html</loc>
+  </url>
+  <url>
+    <loc>/reference/holland.html</loc>
+  </url>
+  <url>
     <loc>/reference/index.html</loc>
+  </url>
+  <url>
+    <loc>/reference/normalize.html</loc>
+  </url>
+  <url>
+    <loc>/reference/PCA.html</loc>
   </url>
   <url>
     <loc>/reference/plot.factorAnalysis.html</loc>
@@ -38,6 +47,9 @@
   </url>
   <url>
     <loc>/reference/screePlot.html</loc>
+  </url>
+  <url>
+    <loc>/reference/standardize.html</loc>
   </url>
   <url>
     <loc>/reference/wss_plot.html</loc>

@@ -19,10 +19,9 @@
 #' @import ggplot2
 #' @import dplyr
 #' @import tidyr
-#' @importFrom qacBase standardize
 #' @examples
 #' # 3 cluster solution
-#' iris <- qacBase::standardize(iris)
+#' iris <- standardize(iris)
 #' df <- iris[-5]
 #' set.seed(1234)
 #' fit <- kmeans(df, 3)
@@ -44,7 +43,7 @@ profile_plot <- function(data, cluster="cluster",
   }
 
   data[cluster] <- NULL
-  data <- qacBase::standardize(data)
+  data <- standardize(data)
   data$cluster <- clustervar
 
 

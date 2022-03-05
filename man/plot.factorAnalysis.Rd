@@ -4,7 +4,7 @@
 \alias{plot.factorAnalysis}
 \title{Plot a Factor Solution}
 \usage{
-\method{plot}{factorAnalysis}(x, y, ..., sort = TRUE, type = c("table", "bar"))
+\method{plot}{factorAnalysis}(x, y, ..., sort = TRUE, type = c("bar", "table"))
 }
 \arguments{
 \item{x}{an object of class \code{factorAnalysis} produced by the \code{\link{PCA}}
@@ -16,7 +16,7 @@ or \code{\link{FA}} functions.}
 
 \item{sort}{logical. If \code{TRUE}, sort the pattern matrix.}
 
-\item{type}{generate a table plot (\code{"table"}) or bar plot (\code{"bar"}).}
+\item{type}{generate a bar plot (\code{"bar"}) or table plot (\code{"table"}).}
 }
 \value{
 a ggplot2 graph
@@ -28,5 +28,5 @@ common factor analysis solution
 \examples{
 fit.pca <- PCA(Harman74.cor$cov, nfactors=4, rotate="varimax")
 plot(fit.pca)
-plot(fit.pca, type="bar")
+plot(fit.pca, type="table")
 }

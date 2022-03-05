@@ -28,7 +28,7 @@ are faceted, while the line charts are grouped.
 }
 \examples{
 # 3 cluster solution
-iris <- qacBase::standardize(iris)
+iris <- standardize(iris)
 df <- iris[-5]
 set.seed(1234)
 fit <- kmeans(df, 3)

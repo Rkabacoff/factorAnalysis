@@ -21,7 +21,6 @@
 #' @return a ggplot2 graph
 #' @import ggplot2
 #' @importFrom stats kmeans
-#' @importFrom qacBase standardize
 #' @export
 #' @examples
 #' # iris example (should find 3 clusters)
@@ -35,7 +34,7 @@ wss_plot <- function(data, nc=15, standardize=TRUE, seed=1234){
   # standardize data
   if(!any(sapply(data, is.numeric)))stop("data must be numeric.")
   if (standardize){
-     data <- qacBase::standardize(data)
+     data <- standardize(data)
   }
 
   wss <- numeric(nc)
