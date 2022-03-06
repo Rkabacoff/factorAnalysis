@@ -1,10 +1,10 @@
 ---
-title: "Using the PCA and FA"
+title: "Performing PCA and FA"
 author: "Rob Kabacoff"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndexEntry{Using the PCA and FA}
+  %\VignetteIndexEntry{Performing PCA and FA}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -16,7 +16,7 @@ knitr::opts_chunk$set(
 )
 ```
 
-The **factorAnalysis** package provides functions for principal components and common factor analysis. Based on the William Revelle's comprehensive \link[psych]{https://cran.r-project.org/web/packages/psych/index.html} package, the \code{factorAnalysis} package provides simplified input, intuitive output, and easily interpretable graphs, making these techniques more accessible to data analysts new to these forms of analysis.
+The **qacDR** package provides functions for principal components and common factor analysis. Based on the William Revelle's comprehensive \link[psych]{https://cran.r-project.org/web/packages/psych/index.html} package, the \code{factorAnalysis} package provides simplified input, intuitive output, and easily interpretable graphs, making these techniques more accessible to data analysts new to these forms of analysis.
 
 ## Principal Components Analysis
 
@@ -47,11 +47,11 @@ fit.pca <- PCA(ratings, nfactor=2, rotate="varimax")
 The two components account for 35% of the variance in the original data. Next, we'll plot the pattern matrix as both a table and a bar chart.
 
 ```{r fig.width=6, fig.height=6}
-# plot factor pattern as table
-plot(fit.pca)
-
 # plot factor pattern as bar chart
-plot(fit.pca, type="bar")
+plot(fit.pca, sort=TRUE)
+
+# plot factor pattern as a table
+plot(fit.pca, sort=TRUE, type="table")
 ```
 
 Finally, we'll add the component scores to the original data.
@@ -76,23 +76,23 @@ set.seed(1234)
 screePlot(ratings, method = "ml", n.iter=200)
 ```
 
-The scree plot suggests four factors. In the next step, we'll extract two factors and rotate them using a *promax* rotation.
+Again, the scree plot suggests two factors. In the next step, we'll extract two factors and rotate them using a *promax* rotation.
 
 ```{r fig.width=6, fig.height=6}
 # extract 4 factors
-fit.fa <- FA(ratings, nfactor=4, rotate="promax", fm="ml")
+fit.fa <- FA(ratings, nfactor=2, rotate="promax", fm="ml")
 ```
 
-The printout includes the factor pattern, the factor structure, and the factor intercorrelations. The four factors account for 32% of the variance in the original data. Factors 1 and 3 have the hightest correlation (0.37).
+The printout includes the factor pattern, the factor structure, and the factor intercorrelations. The four factors account for 26% of the variance in the original data. The factors have a  correlation of 0.07 (i.e., practically orthogonal).
 
 Next, we'll plot the pattern matrix as both a table and a bar chart.
 
 ```{r fig.width=6, fig.height=6}
 # plot factor pattern as table
-plot(fit.fa)
+plot(fit.fa, sort=TRUE)
 
 # plot factor pattern as bar chart
-plot(fit.fa, type="bar")
+plot(fit.fa, sort=TRUE, type="table")
 ```
 
 Finally, we'll add the factor scores to the original data.

@@ -16,9 +16,9 @@
 #' @importFrom scales muted
 #' @examples
 #' fit.pca <- PCA(Harman74.cor$cov, nfactors=4, rotate="varimax")
-#' plot(fit.pca)
-#' plot(fit.pca, type="table")
-plot.factorAnalysis <- function(x, y, ..., sort=TRUE, type=c("bar", "table")) {
+#' plot(fit.pca, sort=TRUE)
+#' plot(fit.pca, sort=TRUE, type="table")
+plot.factorAnalysis <- function(x, y, ..., sort=FALSE, type=c("bar", "table")) {
   if (!inherits(x, "factorAnalysis")){
     stop("x must be of class factorAnalysis", call. = FALSE)
   }

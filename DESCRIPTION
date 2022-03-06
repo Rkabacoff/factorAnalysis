@@ -1,6 +1,6 @@
 Package: qacDR
 Type: Package
-Title: Principal Components, Factor Analysis, and Cluster Analysis Tools
+Title: Principal Components, Factor Analysis, and Clustering Tools
 Version: 0.1.0
 Authors@R: person("Rob", "Kabacoff", role=c("aut", "cre"), email="rkabacoff@wesleyan.edu")
 Description: Perform principal components analysis and iterated principal
